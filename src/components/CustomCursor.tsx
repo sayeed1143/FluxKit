@@ -42,7 +42,7 @@ const CustomCursor: React.FC = () => {
       y: position.y - 8,
       height: 16,
       width: 16,
-      backgroundColor: '#2F4673',
+      backgroundColor: '#252626',
       mixBlendMode: 'difference'
     },
     link: {
