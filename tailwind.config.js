@@ -6,22 +6,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#F2F2F2',
-        foreground: '#0D0D0D',
+        // Ethan-Barrett palette
+        eb1: '#252626', // dark gray
+        eb2: '#0D0D0C', // near-black
+        eb3: '#A6A6A6', // gray
+        eb4: '#F2F2F2', // light gray
+        eb5: '#BFBFBF', // mid gray
+
+        background: '#F2F2F2', // eb4
+        foreground: '#0D0D0C', // eb2
         card: '#FFFFFF',
-        border: '#E5E7EB',
-        muted: '#64758C',
+        border: '#BFBFBF', // eb5
+        muted: '#A6A6A6', // eb3
         accent: {
-          DEFAULT: '#8B5CF6',
+          DEFAULT: '#252626', // eb1
           foreground: '#FFFFFF',
         },
         // Semantic aliases for easier refactoring
         brand: {
-          background: '#F2F2F2',
-          foreground: '#0D0D0D',
+          background: '#F2F2F2', // eb4
+          foreground: '#0D0D0C', // eb2
           card: '#FFFFFF',
-          border: '#E5E7EB',
-          muted: '#64758C',
+          border: '#BFBFBF', // eb5
+          muted: '#A6A6A6', // eb3
         }
       },
       keyframes: {
