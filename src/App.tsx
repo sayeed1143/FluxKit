@@ -72,7 +72,11 @@ function App() {
               <AnimatePresence mode="wait">
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  
+
+                  {/* Sections */}
+                  <Route path="/business-tools" element={<BusinessTools />} />
+                  <Route path="/utilities" element={<Utilities />} />
+
                   {/* Business Tools */}
                   <Route path="/ai-meeting-assistant" element={<AIMeetingAssistant />} />
                   <Route path="/gst-invoice-generator" element={<GSTInvoiceGenerator />} />
