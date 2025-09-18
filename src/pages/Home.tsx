@@ -42,25 +42,25 @@ const Home: React.FC = () => {
   const businessTools = [
     { title: 'AI Business Plan Calculator', link: '/ai-business-plan-calculator' },
     { title: 'AI Marketing Budget Calculator', link: '/ai-marketing-budget-calculator' },
-    { title: 'GST Invoice Generator', link: '/gst-invoice-generator' },
     { title: 'AI Meeting Assistant', link: '/ai-meeting-assistant' },
-  ];
+    { title: 'GST Invoice Generator', link: '/gst-invoice-generator' },
+  ].sort((a, b) => a.title.localeCompare(b.title));
 
   const creatorTools = [
-    { title: 'Indian Language AI Writer', link: '/indian-language-writer' },
     { title: 'Code Formatter', link: '/code-formatter' },
     { title: 'Color Palette Generator', link: '/color-palette-generator' },
-    { title: 'Image Resizer', link: '/image-resizer' },
     { title: 'Image Format Converter', link: '/image-format-converter' },
+    { title: 'Image Resizer', link: '/image-resizer' },
+    { title: 'Indian Language AI Writer', link: '/indian-language-writer' },
     { title: 'Text Case Converter', link: '/text-case-converter' },
-  ];
+  ].sort((a, b) => a.title.localeCompare(b.title));
 
   const utilityTools = [
-    { title: 'Image to Text (OCR)', link: '/image-to-text' },
     { title: 'Audio to Text', link: '/audio-to-text' },
     { title: 'File Compressor', link: '/file-compressor' },
+    { title: 'Image to Text (OCR)', link: '/image-to-text' },
     { title: 'QR Code Generator', link: '/qr-code-generator' },
-  ];
+  ].sort((a, b) => a.title.localeCompare(b.title));
 
   const testimonials = [
     {
