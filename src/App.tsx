@@ -42,6 +42,8 @@ import About from './pages/About';
 import Formats from './pages/Formats';
 import { AnimatePresence } from 'framer-motion';
 import CreatorTools from './pages/CreatorTools';
+import BusinessTools from './pages/BusinessTools';
+import Utilities from './pages/Utilities';
 import WordCounter from './pages/WordCounter';
 import ImageCompressor from './pages/ImageCompressor';
 import ImageCropper from './pages/ImageCropper';
