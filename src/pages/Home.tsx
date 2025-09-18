@@ -126,9 +126,10 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-brand-background [mask-image:radial-gradient(ellipse_at_center,transparent_30%,#949BA6)]"></div>
-          <div className="absolute w-96 h-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Orb />
+          <div className="absolute inset-0 bg-brand-background"></div>
+          <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_center,rgba(47,70,115,0.6)_0%,transparent_45%)]"></div>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -inset-40 bg-[conic-gradient(from_180deg_at_50%_50%,#2F4673_0%,#7c8aa8_25%,#2F4673_50%,#7c8aa8_75%,#2F4673_100%)] opacity-10 blur-3xl" />
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,10 +139,9 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-7xl font-bold mb-6 text-brand-foreground">
-              The Ultimate Toolkit for
-              <br />
-              <span className="text-accent">Modern Business</span>
+            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 text-brand-foreground leading-tight">
+              <span className="block">The Ultimate Toolkit for</span>
+              <span className="bg-gradient-to-r from-accent to-indigo-500 bg-clip-text text-transparent">Modern Business</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-brand-muted max-w-3xl mx-auto">
               A comprehensive suite of AI-powered tools for business, creation, compliance, and file conversion.
