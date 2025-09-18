@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
                 <span className="text-accent-foreground font-bold text-lg">A+</span>
               </div>
-              <span className="text-xl font-bold">A-Plus Tools</span>
+              <span className="text-xl font-bold">ToolForge</span>
             </div>
             <p className="text-brand-muted max-w-xs">
               A comprehensive suite of AI-powered tools to streamline your workflow.
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-brand-border/30 mt-12 pt-8 text-center">
           <p className="text-brand-muted">
-            © 2025 A-Plus Tools. All rights reserved.
+            © 2025 ToolForge. All rights reserved.
           </p>
         </div>
       </div>
