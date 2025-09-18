@@ -99,19 +99,19 @@ const Home: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {tools.map((tool, index) => (
               <motion.div
                 key={tool.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                viewport={{ once: true, amount: 0.4 }}
               >
-                <SpotlightCard>
+                <SpotlightCard className="hover:-translate-y-0.5 transition-transform">
                   <Link to={tool.link} className="flex justify-between items-center h-full">
                     <h3 className="text-lg font-semibold text-brand-foreground">{tool.title}</h3>
-                    <ArrowRight className="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-5 h-5 text-accent opacity-100 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </SpotlightCard>
               </motion.div>
