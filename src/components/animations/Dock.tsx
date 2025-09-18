@@ -29,7 +29,7 @@ const Dock: React.FC<DockProps> = ({ items }) => {
   );
 };
 
-const DockItem = ({ mouseX, item }: { mouseX: any; item: DockItem }) => {
+const DockItem = ({ mouseX, item }: { mouseX: import('framer-motion').MotionValue<number>; item: DockItem }) => {
   const ref = useRef<HTMLButtonElement>(null);
   const distance = useTransform(mouseX, (val) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };

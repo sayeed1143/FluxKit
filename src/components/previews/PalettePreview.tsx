@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Image, Menu, Search } from 'lucide-react';
+import { Image, Menu } from 'lucide-react';
 
 interface PalettePreviewProps {
   palette: string[];

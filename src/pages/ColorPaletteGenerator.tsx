@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Palette, Copy, CheckCircle, RefreshCw, Lock, Unlock, Upload, Image as ImageIcon, Download, Info } from 'lucide-react';
+import { Palette, Copy, CheckCircle, RefreshCw, Lock, Unlock, Image as ImageIcon, Download, Info } from 'lucide-react';
 import PalettePreview from '../components/previews/PalettePreview';
 
 const ColorPaletteGenerator: React.FC = () => {
@@ -21,7 +21,7 @@ const ColorPaletteGenerator: React.FC = () => {
 
   useEffect(() => {
     generatePalette();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleCopy = async (text: string) => {
     await navigator.clipboard.writeText(text);
@@ -76,7 +76,7 @@ const ColorPaletteGenerator: React.FC = () => {
       let { r, g, b } = rgb;
       r /= 255; g /= 255; b /= 255;
       const max = Math.max(r, g, b), min = Math.min(r, g, b);
-      let h=0, s=0, l = (max + min) / 2;
+      let h=0, s=0; const l = (max + min) / 2;
       if (max !== min) {
         const d = max - min;
         s = l > 0.5 ? d / (2 - max - min) : d / (max + min);

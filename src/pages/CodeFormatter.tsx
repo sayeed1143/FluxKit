@@ -27,7 +27,7 @@ const CodeFormatter: React.FC = () => {
       } else {
         setError(`Formatting for ${language.toUpperCase()} is a premium feature coming soon!`);
       }
-    } catch (err) {
+    } catch {
       setError('Invalid JSON. Please correct it and try again.');
     }
   };
