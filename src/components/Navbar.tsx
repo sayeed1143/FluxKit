@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
                 <span className="text-accent-foreground font-bold text-lg">A+</span>
               </div>
-              <span className="text-xl font-bold text-brand-foreground">A-Plus Tools</span>
+              <span className="text-xl font-bold text-brand-foreground">ToolForge</span>
             </Link>
           </div>
 
@@ -79,9 +79,10 @@ const Navbar: React.FC = () => {
                   </div>
                    <div className="p-2 space-y-2">
                     <h3 className="font-semibold text-brand-foreground px-3 mb-1">Creators</h3>
-                    <NavLink to="/indian-language-writer">AI Writer</NavLink>
+                    <NavLink to="/creator-tools">Creator Tools Hub</NavLink>
                     <NavLink to="/image-resizer">Image Resizer</NavLink>
                     <NavLink to="/color-palette-generator">Color Palette</NavLink>
+                    <NavLink to="/word-counter">Word Counter</NavLink>
                   </div>
               </div>
             </Dropdown>

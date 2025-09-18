@@ -41,6 +41,24 @@ import FileCompressor from './pages/FileCompressor';
 import About from './pages/About';
 import Formats from './pages/Formats';
 import { AnimatePresence } from 'framer-motion';
+import CreatorTools from './pages/CreatorTools';
+import WordCounter from './pages/WordCounter';
+import ImageCompressor from './pages/ImageCompressor';
+import ImageCropper from './pages/ImageCropper';
+import BackgroundRemover from './pages/BackgroundRemover';
+import TransparentPngMaker from './pages/TransparentPngMaker';
+import WatermarkTool from './pages/WatermarkTool';
+import PaletteFromImage from './pages/PaletteFromImage';
+import SocialBannerGenerator from './pages/SocialBannerGenerator';
+import MemeMaker from './pages/MemeMaker';
+import ColorContrastChecker from './pages/ColorContrastChecker';
+import FaviconGenerator from './pages/FaviconGenerator';
+import SvgPngConverter from './pages/SvgPngConverter';
+import SvgOptimizer from './pages/SvgOptimizer';
+import IconSpriteBuilder from './pages/IconSpriteBuilder';
+import TableCsvConverter from './pages/TableCsvConverter';
+import RegexTester from './pages/RegexTester';
+import UUIDSlugGenerator from './pages/UUIDSlugGenerator';
 
 function App() {
   return (
@@ -62,6 +80,27 @@ function App() {
                   <Route path="/ai-marketing-budget-calculator" element={<AIMarketingBudgetCalculator />} />
 
                   {/* Creator Tools */}
+                  <Route path="/creator-tools" element={<CreatorTools />} />
+                  <Route path="/word-counter" element={<WordCounter />} />
+                  <Route path="/image-compressor" element={<ImageCompressor />} />
+                  <Route path="/image-cropper" element={<ImageCropper />} />
+                  <Route path="/background-remover" element={<BackgroundRemover />} />
+                  <Route path="/transparent-png" element={<TransparentPngMaker />} />
+                  <Route path="/watermark" element={<WatermarkTool />} />
+                  <Route path="/palette-from-image" element={<PaletteFromImage />} />
+                  <Route path="/social-banner" element={<SocialBannerGenerator />} />
+                  <Route path="/meme-maker" element={<MemeMaker />} />
+                  <Route path="/color-contrast-checker" element={<ColorContrastChecker />} />
+                  <Route path="/favicon-generator" element={<FaviconGenerator />} />
+                  <Route path="/svg-png" element={<SvgPngConverter />} />
+                  <Route path="/svg-optimizer" element={<SvgOptimizer />} />
+                  <Route path="/icon-sprite" element={<IconSpriteBuilder />} />
+                  <Route path="/table-csv" element={<TableCsvConverter />} />
+                  <Route path="/regex-tester" element={<RegexTester />} />
+                  <Route path="/uuid-slug" element={<UUIDSlugGenerator />} />
+                  <Route path="/video-to-gif" element={<ComingSoon toolName="Video → GIF" />} />
+                  <Route path="/audio-trimmer" element={<ComingSoon toolName="Audio Trimmer" />} />
+
                   <Route path="/indian-language-writer" element={<IndianLanguageWriter />} />
                   <Route path="/text-case-converter" element={<TextCaseConverter />} />
                   <Route path="/code-formatter" element={<CodeFormatter />} />

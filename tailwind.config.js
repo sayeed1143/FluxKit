@@ -12,7 +12,7 @@ module.exports = {
         border: '#E5E7EB',
         muted: '#64758C',
         accent: {
-          DEFAULT: '#2F4673',
+          DEFAULT: '#6366F1',
           foreground: '#FFFFFF',
         },
         // Semantic aliases for easier refactoring
