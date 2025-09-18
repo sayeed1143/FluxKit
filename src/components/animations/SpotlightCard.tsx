@@ -33,7 +33,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className }) =>
           background: useMotionTemplate`
             radial-gradient(
               350px circle at ${mouseX}px ${mouseY}px,
-              rgba(47, 69, 114, 0.15),
+              rgba(37, 38, 38, 0.18),
               transparent 80%
             )
           `,

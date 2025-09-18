@@ -59,9 +59,9 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2" data-cursor-hover>
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">A+</span>
+                <span className="text-accent-foreground font-bold text-lg">FK</span>
               </div>
-              <span className="text-xl font-bold text-brand-foreground">A-Plus Tools</span>
+              <span className="text-xl font-bold text-brand-foreground">FluxKit</span>
             </Link>
           </div>
 
@@ -70,18 +70,26 @@ const Navbar: React.FC = () => {
             <NavLink to="/">Home</NavLink>
             
             <Dropdown title="Tools">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-4">
                   <div className="p-2 space-y-2">
-                    <h3 className="font-semibold text-brand-foreground px-3 mb-1">Business</h3>
-                    <NavLink to="/ai-business-plan-calculator">Business Plan Calc</NavLink>
-                    <NavLink to="/ai-marketing-budget-calculator">Marketing Budget Calc</NavLink>
-                    <NavLink to="/gst-invoice-generator">GST Invoice Generator</NavLink>
+                    <h3 className="font-semibold text-brand-foreground px-3 mb-1">Sections</h3>
+                    <NavLink to="/business-tools">Business Tools</NavLink>
+                    <NavLink to="/creator-tools">Creator Tools</NavLink>
+                    <NavLink to="/utilities">Utilities</NavLink>
+                    <NavLink to="/legal-tools">Legal & Compliance</NavLink>
+                    <NavLink to="/all-converters">File Converters</NavLink>
                   </div>
-                   <div className="p-2 space-y-2">
-                    <h3 className="font-semibold text-brand-foreground px-3 mb-1">Creators</h3>
-                    <NavLink to="/indian-language-writer">AI Writer</NavLink>
-                    <NavLink to="/image-resizer">Image Resizer</NavLink>
-                    <NavLink to="/color-palette-generator">Color Palette</NavLink>
+                  <div className="p-2 space-y-2">
+                    <h3 className="font-semibold text-brand-foreground px-3 mb-1">Popular</h3>
+                    <NavLink to="/ai-meeting-assistant">AI Meeting Assistant</NavLink>
+                    <NavLink to="/image-format-converter">Image Converter</NavLink>
+                    <NavLink to="/word-counter">Word Counter</NavLink>
+                  </div>
+                  <div className="p-2 space-y-2">
+                    <h3 className="font-semibold text-brand-foreground px-3 mb-1">Converters</h3>
+                    <NavLink to="/audio-converter">Audio Converter</NavLink>
+                    <NavLink to="/video-converter">Video Converter</NavLink>
+                    <NavLink to="/formats">Supported Formats</NavLink>
                   </div>
               </div>
             </Dropdown>

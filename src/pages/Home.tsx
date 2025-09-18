@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, BriefcaseBusiness, Paintbrush, ShieldCheck, Shuffle, Wrench, User } from 'lucide-react';
-import Orb from '../components/animations/Orb';
 import SpotlightCard from '../components/animations/SpotlightCard';
 import CardSwap, { Card } from '../components/animations/CardSwap';
 
@@ -12,19 +11,19 @@ const Home: React.FC = () => {
       icon: BriefcaseBusiness,
       title: 'Business Tools',
       description: 'Streamline your operations, from invoicing to strategic planning.',
-      link: '/#business-tools',
+      link: '/business-tools',
     },
     {
       icon: Paintbrush,
       title: 'Creator Tools',
       description: 'Unleash your creativity with AI writers, image tools, and more.',
-      link: '/#creator-tools',
+      link: '/creator-tools',
     },
      {
       icon: Wrench,
       title: 'Utilities',
       description: 'Powerful utilities like OCR, transcription, and file compression.',
-      link: '/#utility-tools',
+      link: '/utilities',
     },
     {
       icon: ShieldCheck,
@@ -43,31 +42,31 @@ const Home: React.FC = () => {
   const businessTools = [
     { title: 'AI Business Plan Calculator', link: '/ai-business-plan-calculator' },
     { title: 'AI Marketing Budget Calculator', link: '/ai-marketing-budget-calculator' },
-    { title: 'GST Invoice Generator', link: '/gst-invoice-generator' },
     { title: 'AI Meeting Assistant', link: '/ai-meeting-assistant' },
-  ];
+    { title: 'GST Invoice Generator', link: '/gst-invoice-generator' },
+  ].sort((a, b) => a.title.localeCompare(b.title));
 
   const creatorTools = [
-    { title: 'Indian Language AI Writer', link: '/indian-language-writer' },
     { title: 'Code Formatter', link: '/code-formatter' },
     { title: 'Color Palette Generator', link: '/color-palette-generator' },
-    { title: 'Image Resizer', link: '/image-resizer' },
     { title: 'Image Format Converter', link: '/image-format-converter' },
+    { title: 'Image Resizer', link: '/image-resizer' },
+    { title: 'Indian Language AI Writer', link: '/indian-language-writer' },
     { title: 'Text Case Converter', link: '/text-case-converter' },
-  ];
+  ].sort((a, b) => a.title.localeCompare(b.title));
 
   const utilityTools = [
-    { title: 'Image to Text (OCR)', link: '/image-to-text' },
     { title: 'Audio to Text', link: '/audio-to-text' },
     { title: 'File Compressor', link: '/file-compressor' },
+    { title: 'Image to Text (OCR)', link: '/image-to-text' },
     { title: 'QR Code Generator', link: '/qr-code-generator' },
-  ];
+  ].sort((a, b) => a.title.localeCompare(b.title));
 
   const testimonials = [
     {
       name: 'Sarah L.',
       role: 'Freelance Designer',
-      quote: 'A-Plus Tools has become my go-to. The Color Palette Generator is a lifesaver, and the invoice tool is so simple. It saves me hours every week!',
+      quote: 'FluxKit has become my go-to. The Color Palette Generator is a lifesaver, and the invoice tool is so simple. It saves me hours every week!',
     },
     {
       name: 'Amit P.',
@@ -100,19 +99,19 @@ const Home: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {tools.map((tool, index) => (
               <motion.div
                 key={tool.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                viewport={{ once: true, amount: 0.4 }}
               >
-                <SpotlightCard>
+                <SpotlightCard className="hover:-translate-y-0.5 transition-transform">
                   <Link to={tool.link} className="flex justify-between items-center h-full">
                     <h3 className="text-lg font-semibold text-brand-foreground">{tool.title}</h3>
-                    <ArrowRight className="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-5 h-5 text-accent opacity-100 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </SpotlightCard>
               </motion.div>
@@ -127,9 +126,10 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-brand-background [mask-image:radial-gradient(ellipse_at_center,transparent_30%,#949BA6)]"></div>
-          <div className="absolute w-96 h-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Orb />
+          <div className="absolute inset-0 bg-brand-background"></div>
+          <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_center,rgba(47,70,115,0.6)_0%,transparent_45%)]"></div>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -inset-40 bg-[conic-gradient(from_180deg_at_50%_50%,#2F4673_0%,#7c8aa8_25%,#2F4673_50%,#7c8aa8_75%,#2F4673_100%)] opacity-10 blur-3xl" />
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,10 +139,9 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-7xl font-bold mb-6 text-brand-foreground">
-              The Ultimate Toolkit for
-              <br />
-              <span className="text-accent">Modern Business</span>
+            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 text-brand-foreground leading-tight">
+              <span className="block">The Ultimate Toolkit for</span>
+              <span className="bg-gradient-to-r from-accent to-indigo-500 bg-clip-text text-transparent">Modern Business</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-brand-muted max-w-3xl mx-auto">
               A comprehensive suite of AI-powered tools for business, creation, compliance, and file conversion.
@@ -268,7 +267,7 @@ const Home: React.FC = () => {
               Ready to Boost Your Productivity?
             </h2>
             <p className="text-xl text-brand-muted/80 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses already using A-Plus Tools to streamline their operations
+              Join thousands of businesses already using FluxKit to streamline their operations
             </p>
             <Link
               to="/auth"

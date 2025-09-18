@@ -53,32 +53,34 @@ const AllConverters: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <motion.div
               key={category.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="bg-brand-card border border-brand-border rounded-xl p-6"
             >
-              <div className="flex items-center space-x-3 mb-4">
-                <category.icon className="w-6 h-6 text-accent" />
-                <h2 className="text-xl font-semibold text-brand-foreground">{category.name}</h2>
+              <div className="group relative w-full overflow-hidden rounded-xl bg-brand-card border border-brand-border/50 p-6 shadow-lg hover:-translate-y-0.5 transition-transform" data-cursor-hover>
+                <div className="flex items-center space-x-3 mb-4">
+                  <category.icon className="w-6 h-6 text-accent" />
+                  <h2 className="text-xl font-semibold text-brand-foreground">{category.name}</h2>
+                </div>
+                <ul className="space-y-2">
+                  {category.conversions.map(conv => {
+                    const [from, to] = conv.toLowerCase().split(' to ');
+                    return (
+                      <li key={conv}>
+                        <Link to={`/convert/${from}/${to}`} className="flex items-center justify-between text-brand-muted hover:text-accent transition-colors">
+                          <span>{conv}</span>
+                          <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
-              <ul className="space-y-2">
-                {category.conversions.map(conv => {
-                  const [from, to] = conv.toLowerCase().split(' to ');
-                  return (
-                    <li key={conv}>
-                      <Link to={`/convert/${from}/${to}`} className="text-brand-muted hover:text-accent transition-colors" data-cursor-hover>
-                        {conv}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
             </motion.div>
           ))}
         </div>
