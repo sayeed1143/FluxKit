@@ -11,19 +11,19 @@ const Home: React.FC = () => {
       icon: BriefcaseBusiness,
       title: 'Business Tools',
       description: 'Streamline your operations, from invoicing to strategic planning.',
-      link: '/#business-tools',
+      link: '/business-tools',
     },
     {
       icon: Paintbrush,
       title: 'Creator Tools',
       description: 'Unleash your creativity with AI writers, image tools, and more.',
-      link: '/#creator-tools',
+      link: '/creator-tools',
     },
      {
       icon: Wrench,
       title: 'Utilities',
       description: 'Powerful utilities like OCR, transcription, and file compression.',
-      link: '/#utility-tools',
+      link: '/utilities',
     },
     {
       icon: ShieldCheck,
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
     {
       name: 'Sarah L.',
       role: 'Freelance Designer',
-      quote: 'ToolForge has become my go-to. The Color Palette Generator is a lifesaver, and the invoice tool is so simple. It saves me hours every week!',
+      quote: 'FluxKit has become my go-to. The Color Palette Generator is a lifesaver, and the invoice tool is so simple. It saves me hours every week!',
     },
     {
       name: 'Amit P.',
@@ -267,7 +267,7 @@ const Home: React.FC = () => {
               Ready to Boost Your Productivity?
             </h2>
             <p className="text-xl text-brand-muted/80 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses already using ToolForge to streamline their operations
+              Join thousands of businesses already using FluxKit to streamline their operations
             </p>
             <Link
               to="/auth"

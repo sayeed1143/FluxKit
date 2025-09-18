@@ -59,9 +59,9 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2" data-cursor-hover>
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">TF</span>
+                <span className="text-accent-foreground font-bold text-lg">FK</span>
               </div>
-              <span className="text-xl font-bold text-brand-foreground">ToolForge</span>
+              <span className="text-xl font-bold text-brand-foreground">FluxKit</span>
             </Link>
           </div>
 
