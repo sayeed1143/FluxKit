@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, BriefcaseBusiness, Paintbrush, ShieldCheck, Shuffle, Wrench, User } from 'lucide-react';
-import Orb from '../components/animations/Orb';
 import SpotlightCard from '../components/animations/SpotlightCard';
 import CardSwap, { Card } from '../components/animations/CardSwap';
 
