@@ -50,7 +50,7 @@ const CustomCursor: React.FC = () => {
       y: position.y - 24,
       height: 48,
       width: 48,
-      backgroundColor: '#D9D9D9',
+      backgroundColor: '#A6A6A6',
       mixBlendMode: 'difference'
     }
   };
