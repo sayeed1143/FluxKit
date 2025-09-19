@@ -93,6 +93,7 @@ const Navbar: React.FC = () => {
                     <NavLink to="/ai-meeting-assistant">AI Meeting Assistant</NavLink>
                     <NavLink to="/image-format-converter">Image Converter</NavLink>
                     <NavLink to="/word-counter">Word Counter</NavLink>
+                    <NavLink to="/hashtag-generator">Hashtag & Caption Generator</NavLink>
                   </div>
                   <div className="p-2 space-y-2">
                     <h3 className="font-semibold text-brand-foreground px-3 mb-1">Converters</h3>
