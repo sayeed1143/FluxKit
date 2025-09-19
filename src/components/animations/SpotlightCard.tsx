@@ -22,7 +22,11 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className }) =>
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.01 }}
+      transition={{ duration: 0.35 }}
       className={`group relative w-full overflow-hidden rounded-xl bg-brand-card border border-brand-border/50 p-8 shadow-lg ${className}`}
       onMouseMove={handleMouseMove}
       data-cursor-hover
@@ -40,7 +44,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className }) =>
         }}
       />
       <div className="relative z-10">{children}</div>
-    </div>
+    </motion.div>
   );
 };
 
