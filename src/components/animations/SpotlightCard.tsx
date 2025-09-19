@@ -27,7 +27,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className }) =>
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.35 }}
-      className={`group relative w-full overflow-hidden rounded-xl bg-brand-card border border-brand-border/50 p-8 shadow-lg ${className}`}
+      className={`group relative w-full overflow-hidden rounded-xl bg-brand-card border border-brand-border/50 p-8 shadow-lg motion-safe:animate-card-float motion-safe:animate-fade-in-slow ${className}`}
       onMouseMove={handleMouseMove}
       data-cursor-hover
     >
