@@ -186,7 +186,18 @@ const ColorPaletteGenerator: React.FC = () => {
               </motion.div>
             ))}
           </div>
-          
+
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-2">
+            {['bg','card','text','accent','muted'].map(role => (
+              <div key={role} className="p-2 bg-brand-card border border-brand-border rounded">
+                <label className="block text-xs text-brand-muted mb-1">{role.toUpperCase()}</label>
+                <select value={roleMap[role]} onChange={e=>setRoleIndex(role, parseInt(e.target.value))} className="w-full p-2 rounded border">
+                  {palette.map((c, i)=>(<option key={i} value={i}>{c}</option>))}
+                </select>
+              </div>
+            ))}
+          </div>
+
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
              <div className="flex items-center gap-2">
                 <button onClick={() => imageInputRef.current?.click()} className="inline-flex items-center space-x-2 bg-brand-border/50 text-brand-foreground px-4 py-2 rounded-lg hover:bg-brand-border/70 transition-colors" data-cursor-hover>
