@@ -87,6 +87,7 @@ function App() {
                   <Route path="/gst-invoice-generator" element={<GSTInvoiceGenerator />} />
                   <Route path="/ai-business-plan-calculator" element={<AIBusinessPlanCalculator />} />
                   <Route path="/ai-marketing-budget-calculator" element={<AIMarketingBudgetCalculator />} />
+                  <Route path="/hashtag-generator" element={<HashtagGenerator />} />
 
                   {/* Creator Tools */}
                   <Route path="/creator-tools" element={<CreatorTools />} />
