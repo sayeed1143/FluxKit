@@ -99,9 +99,11 @@ function App() {
                   <Route path="/background-remover" element={<BackgroundRemover />} />
                   <Route path="/transparent-png" element={<TransparentPngMaker />} />
                   <Route path="/watermark" element={<WatermarkTool />} />
+                  <Route path="/watermark-remover" element={<WatermarkRemover />} />
                   <Route path="/palette-from-image" element={<PaletteFromImage />} />
                   <Route path="/social-banner" element={<SocialBannerGenerator />} />
                   <Route path="/meme-maker" element={<MemeMaker />} />
+                  <Route path="/unmotivational-quotes" element={<UnmotivationalQuotes />} />
                   <Route path="/color-contrast-checker" element={<ColorContrastChecker />} />
                   <Route path="/favicon-generator" element={<FaviconGenerator />} />
                   <Route path="/svg-png" element={<SvgPngConverter />} />
