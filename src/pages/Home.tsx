@@ -177,7 +177,7 @@ const Home: React.FC = () => {
                   <h3 className="text-xl font-semibold text-brand-foreground mb-4">
                     {tool.title}
                   </h3>
-                  <p className="text-brand-muted mb-6 flex-grow">
+                  <p className="text-brand-foreground mb-6 flex-grow">
                     {tool.description}
                   </p>
                   <Link
