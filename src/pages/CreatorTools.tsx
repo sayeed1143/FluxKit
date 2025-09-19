@@ -31,7 +31,7 @@ const CreatorTools: React.FC = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-brand-foreground">
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-6">
       <h1 className="text-3xl md:text-5xl font-bold">Creator Tools</h1>
-      <p className="text-brand-muted max-w-2xl mt-2">Essential, easy-to-use tools for social media creators — designed for speed, templates, and shareable exports.</p>
+      <p className="text-brand-foreground max-w-2xl mt-2">Essential, easy-to-use tools for social media creators — designed for speed, templates, and shareable exports.</p>
     </motion.div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
