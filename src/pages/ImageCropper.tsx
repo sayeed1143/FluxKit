@@ -17,7 +17,15 @@ const ImageCropper: React.FC = () => {
       <input type="file" accept="image/*" onChange={e=>e.target.files&&onFile(e.target.files[0])} />
       <div className="grid md:grid-cols-2 gap-4 mt-4 items-start">
         <div>
-          <img ref={imgRef} src={src||''} alt="" onLoad={()=>{ setX(0); setY(0); setW(imgRef.current!.naturalWidth/2|0); setH(imgRef.current!.naturalHeight/2|0); }} className="max-w-full rounded border" />
+          {src ? (
+            <img
+              ref={imgRef}
+              src={src}
+              alt=""
+              onLoad={() => { setX(0); setY(0); setW(imgRef.current!.naturalWidth/2|0); setH(imgRef.current!.naturalHeight/2|0); }}
+              className="max-w-full rounded border"
+            />
+          ) : null}
           <div className="grid grid-cols-2 gap-2 mt-2 text-sm">
             <label>X<input type="number" value={x} onChange={e=>setX(parseInt(e.target.value))} className="w-full p-1 rounded border"/></label>
             <label>Y<input type="number" value={y} onChange={e=>setY(parseInt(e.target.value))} className="w-full p-1 rounded border"/></label>
