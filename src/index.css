@@ -59,6 +59,11 @@
     color: var(--brand-card-foreground) !important;
   }
 
+  /* Force all text inside brand cards to be readable */
+  .bg-brand-card, .bg-brand-card * {
+    color: var(--brand-card-foreground) !important;
+  }
+
   /* Make interactive elements more visible on dark cards */
   .bg-brand-card a, .bg-brand-card button, .bg-brand-card input, .bg-brand-card textarea{
     color: var(--brand-card-foreground) !important;
