@@ -157,7 +157,7 @@ const ColorPaletteGenerator: React.FC = () => {
           <h1 className="text-4xl font-bold text-brand-foreground mb-4">
             Advanced Color Palette Generator
           </h1>
-          <p className="text-xl text-brand-muted max-w-2xl mx-auto">
+          <p className="text-xl text-brand-foreground max-w-2xl mx-auto">
             Create, explore, and export beautiful color schemes for your next project.
           </p>
         </motion.div>
@@ -190,7 +190,7 @@ const ColorPaletteGenerator: React.FC = () => {
           <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-2">
             {['bg','card','text','accent','muted'].map(role => (
               <div key={role} className="p-2 bg-brand-card border border-brand-border rounded">
-                <label className="block text-xs text-brand-muted mb-1">{role.toUpperCase()}</label>
+                <label className="block text-xs text-brand-foreground mb-1">{role.toUpperCase()}</label>
                 <select value={roleMap[role]} onChange={e=>setRoleIndex(role, parseInt(e.target.value))} className="w-full p-2 rounded border">
                   {palette.map((c, i)=>(<option key={i} value={i}>{c}</option>))}
                 </select>
