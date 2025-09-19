@@ -31,7 +31,9 @@ const MemeMaker: React.FC = () => {
           <button onClick={download} className="bg-accent text-accent-foreground px-4 py-2 rounded">Download PNG</button>
         </div>
         <div>
-          <img ref={imgRef} src={src||''} alt="" onLoad={()=>{}} className="hidden" />
+          {src ? (
+            <img ref={imgRef} src={src} alt="" onLoad={()=>{}} className="hidden" />
+          ) : null}
           <canvas ref={canvasRef} className="w-full border border-brand-border rounded" />
         </div>
       </div>
