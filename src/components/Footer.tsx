@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               </div>
               <span className="text-xl font-bold">FluxKit</span>
             </div>
-            <p className="text-brand-muted max-w-xs">
+            <p className="text-brand-foreground max-w-xs">
               A comprehensive suite of AI-powered tools to streamline your workflow.
             </p>
           </div>
