@@ -22,6 +22,7 @@ const tools = [
   { name: 'Short Video → GIF (Coming Soon)', link: '/video-to-gif' },
   { name: 'Audio Trimmer (Coming Soon)', link: '/audio-trimmer' },
   { name: 'Word Counter (Captions)', link: '/word-counter' },
+  { name: 'Hashtag & AI Caption Generator', link: '/hashtag-generator' },
 ];
 
 const CreatorTools: React.FC = () => (
