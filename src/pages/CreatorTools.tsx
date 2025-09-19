@@ -24,6 +24,7 @@ const tools = [
   { name: 'Audio Trimmer (Coming Soon)', link: '/audio-trimmer' },
   { name: 'Word Counter (Captions)', link: '/word-counter' },
   { name: 'Hashtag & AI Caption Generator', link: '/hashtag-generator' },
+  { name: 'Unmotivational Quotes Generator', link: '/unmotivational-quotes' },
 ];
 
 const CreatorTools: React.FC = () => (
