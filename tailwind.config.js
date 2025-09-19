@@ -6,23 +6,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Updated site palette
-        background: '#f9f9f9',
-        foreground: '#383b43',
-        card: '#c9d5e3',
-        border: '#c9d5e3',
-        muted: '#383b43',
+        // Updated site palette (requested)
+        background: '#f3f3f3',
+        foreground: '#0D0D0C',
+        card: '#252626',
+        border: '#252626',
+        muted: '#BFBFBF',
         accent: {
-          DEFAULT: '#383b43',
+          DEFAULT: '#252626',
           foreground: '#ffffff',
         },
         // Semantic aliases
         brand: {
-          background: '#f9f9f9',
-          foreground: '#383b43',
-          card: '#c9d5e3',
-          border: '#c9d5e3',
-          muted: '#383b43',
+          background: '#f3f3f3',
+          foreground: '#0D0D0C',
+          card: '#252626',
+          border: '#252626',
+          muted: '#BFBFBF',
         }
       },
       keyframes: {
