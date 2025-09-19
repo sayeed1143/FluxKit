@@ -32,18 +32,27 @@ const Navbar: React.FC = () => {
   );
 
   const Dropdown: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
-    <div className="relative" onMouseEnter={() => setOpenDropdown(title)} onMouseLeave={() => setOpenDropdown(null)}>
-      <button className="flex items-center space-x-1 text-brand-muted hover:text-brand-foreground transition-colors" data-cursor-hover>
+    <div
+      className="relative"
+      onMouseEnter={() => setOpenDropdown(title)}
+      onMouseLeave={() => setOpenDropdown(null)}
+    >
+      <button
+        className="flex items-center space-x-1 text-brand-muted hover:text-brand-foreground transition-colors"
+        data-cursor-hover
+      >
         <span>{title}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === title ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`w-4 h-4 transition-transform ${openDropdown === title ? 'rotate-180' : ''}`}
+        />
       </button>
       <AnimatePresence>
         {openDropdown === title && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute left-1/2 -translate-x-1/2 mt-2 w-max bg-brand-card rounded-md shadow-lg p-2 border border-brand-border/50"
+            exit={{ opacity: 0, y: 6 }}
+            className="absolute left-1/2 -translate-x-1/2 top-full w-max bg-brand-card rounded-md shadow-lg p-2 border border-brand-border/50"
           >
             {children}
           </motion.div>
