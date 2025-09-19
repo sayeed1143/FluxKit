@@ -1,21 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const MemeMaker: React.FC = () => {
-  const [src,setSrc]=useState<string|nil>(null as any);
+  const [src,setSrc]=useState<string|null>(null);
   const [top,setTop]=useState('TOP TEXT');
   const [bottom,setBottom]=useState('BOTTOM TEXT');
   const [size,setSize]=useState(48);
+  const [color,setColor]=useState('#ffffff');
+  const [strokeColor,setStrokeColor]=useState('#000000');
+  const [font,setFont]=useState('Impact, Arial Black, Arial, sans-serif');
   const canvasRef=useRef<HTMLCanvasElement>(null);
   const imgRef=useRef<HTMLImageElement>(null);
+
+  const fonts = ['Impact, Arial Black, Arial, sans-serif', 'Inter, system-ui, Arial', 'Georgia, serif', 'Verdana, sans-serif'];
 
   const onFile=(f:File)=>{const r=new FileReader(); r.onload=()=>setSrc(r.result as string); r.readAsDataURL(f);};
   useEffect(()=>{
     if(!src) return; const img=imgRef.current!, c=canvasRef.current!, ctx=c.getContext('2d')!; if(!img.complete) return;
-    c.width=img.naturalWidth; c.height=img.naturalHeight; ctx.drawImage(img,0,0);
-    ctx.fillStyle='#fff'; ctx.strokeStyle='#000'; ctx.lineWidth=Math.max(2, size/10); ctx.textAlign='center'; ctx.font=`bold ${size}px Impact, Arial Black, Arial, sans-serif`;
+    c.width=img.naturalWidth; c.height=img.naturalHeight; ctx.clearRect(0,0,c.width,c.height); ctx.drawImage(img,0,0);
+    ctx.fillStyle=color; ctx.strokeStyle=strokeColor; ctx.lineWidth=Math.max(2, size/10); ctx.textAlign='center'; ctx.font=`bold ${size}px ${font}`;
     ctx.textBaseline='top'; ctx.strokeText(top, c.width/2, 10); ctx.fillText(top, c.width/2, 10);
     ctx.textBaseline='bottom'; ctx.strokeText(bottom, c.width/2, c.height-10); ctx.fillText(bottom, c.width/2, c.height-10);
-  },[src,top,bottom,size]);
+  },[src,top,bottom,size,color,strokeColor,font]);
   const download=()=>{const a=document.createElement('a'); a.href=canvasRef.current!.toDataURL('image/png'); a.download='meme.png'; a.click();};
 
   return (
