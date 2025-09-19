@@ -31,7 +31,9 @@ const TransparentPngMaker: React.FC = () => {
           <button onClick={download} className="bg-accent text-accent-foreground px-4 py-2 rounded">Download PNG</button>
         </div>
         <div>
-          <img ref={inRef} src={src||''} alt="" onLoad={()=>{}} className="hidden" />
+          {src ? (
+            <img ref={inRef} src={src} alt="" onLoad={()=>{}} className="hidden" />
+          ) : null}
           <canvas ref={outRef} className="w-full border rounded" />
         </div>
       </div>
