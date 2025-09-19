@@ -21,6 +21,7 @@ import CodeFormatter from './pages/CodeFormatter';
 import ColorPaletteGenerator from './pages/ColorPaletteGenerator';
 import QRCodeGenerator from './pages/QRCodeGenerator';
 import AIBusinessPlanCalculator from './pages/AIBusinessPlanCalculator';
+import HashtagGenerator from './pages/HashtagGenerator';
 
 // Import newly implemented creator tools
 import AudioConverter from './pages/AudioConverter';
