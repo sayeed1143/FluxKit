@@ -18,7 +18,9 @@ const FaviconGenerator: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-brand-foreground">
       <h1 className="text-3xl md:text-5xl font-bold mb-6">Favicon Generator</h1>
       <input type="file" accept="image/*,image/svg+xml" onChange={e=>e.target.files&&onFile(e.target.files[0])} />
-      <img ref={imgRef} src={src||''} alt="" className="hidden" onLoad={()=>{}} />
+      {src ? (
+        <img ref={imgRef} src={src} alt="" className="hidden" onLoad={()=>{}} />
+      ) : null}
       {src && (
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mt-4">
           {sizes.map(s=>(
