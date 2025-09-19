@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {links.map(link => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-brand-muted hover:text-accent transition-colors" data-cursor-hover>
+                    <Link to={link.path} className="text-brand-foreground hover:text-accent transition-colors" data-cursor-hover>
                       {link.name}
                     </Link>
                   </li>
