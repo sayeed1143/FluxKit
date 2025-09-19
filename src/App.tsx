@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import Breadcrumbs from './components/Breadcrumbs';
 import Home from './pages/Home';
 import AIMeetingAssistant from './pages/AIMeetingAssistant';
 import IndianLanguageWriter from './pages/IndianLanguageWriter';
