@@ -15,6 +15,7 @@ const tools = [
   { name: 'Meme / Text-on-Image', link: '/meme-maker' },
   { name: 'Transparent PNG Maker', link: '/transparent-png' },
   { name: 'Watermark Tool', link: '/watermark' },
+  { name: 'Watermark Remover', link: '/watermark-remover' },
   { name: 'Favicon Generator', link: '/favicon-generator' },
   { name: 'SVG Optimizer', link: '/svg-optimizer' },
   { name: 'Icon Spritesheet Builder', link: '/icon-sprite' },
