@@ -139,19 +139,19 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 text-brand-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-brand-foreground leading-tight">
               <span className="block">The Ultimate Toolkit for</span>
-              <span className="bg-gradient-to-r from-accent to-indigo-500 bg-clip-text text-transparent">Modern Business</span>
+              <span className="block text-accent">Creators & Modern Businesses</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-brand-muted max-w-3xl mx-auto">
-              A comprehensive suite of AI-powered tools for business, creation, compliance, and file conversion.
+            <p className="text-lg md:text-xl mb-10 text-brand-muted max-w-3xl mx-auto">
+              AI-powered design and productivity tools to create, publish, and grow your brand — fast and beautifully.
             </p>
             <Link
               to="/auth"
-              className="inline-flex items-center space-x-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_0_20px_rgba(47,69,114,0.5)] hover:shadow-[0_0_30px_rgba(47,69,114,0.8)] animate-subtle-glow"
+              className="inline-flex items-center space-x-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_12px_30px_rgba(56,59,67,0.12)] hover:shadow-[0_18px_40px_rgba(56,59,67,0.18)] animate-subtle-glow"
               data-cursor-hover
             >
-              <span>Get Started for Free</span>
+              <span>Start Creating — It's Free</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
