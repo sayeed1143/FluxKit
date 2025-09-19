@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import Breadcrumbs from './components/Breadcrumbs';
 import Home from './pages/Home';
 import AIMeetingAssistant from './pages/AIMeetingAssistant';
 import IndianLanguageWriter from './pages/IndianLanguageWriter';
@@ -20,6 +21,7 @@ import CodeFormatter from './pages/CodeFormatter';
 import ColorPaletteGenerator from './pages/ColorPaletteGenerator';
 import QRCodeGenerator from './pages/QRCodeGenerator';
 import AIBusinessPlanCalculator from './pages/AIBusinessPlanCalculator';
+import HashtagGenerator from './pages/HashtagGenerator';
 
 // Import newly implemented creator tools
 import AudioConverter from './pages/AudioConverter';
@@ -55,6 +57,8 @@ import SocialBannerGenerator from './pages/SocialBannerGenerator';
 import MemeMaker from './pages/MemeMaker';
 import ColorContrastChecker from './pages/ColorContrastChecker';
 import FaviconGenerator from './pages/FaviconGenerator';
+import WatermarkRemover from './pages/WatermarkRemover';
+import UnmotivationalQuotes from './pages/UnmotivationalQuotes';
 import SvgPngConverter from './pages/SvgPngConverter';
 import SvgOptimizer from './pages/SvgOptimizer';
 import IconSpriteBuilder from './pages/IconSpriteBuilder';
@@ -70,6 +74,7 @@ function App() {
         <div className="min-h-screen bg-brand-background">
           <div className="relative z-10">
             <Navbar />
+            <Breadcrumbs />
             <main>
               <AnimatePresence mode="wait">
                 <Routes>
@@ -84,6 +89,7 @@ function App() {
                   <Route path="/gst-invoice-generator" element={<GSTInvoiceGenerator />} />
                   <Route path="/ai-business-plan-calculator" element={<AIBusinessPlanCalculator />} />
                   <Route path="/ai-marketing-budget-calculator" element={<AIMarketingBudgetCalculator />} />
+                  <Route path="/hashtag-generator" element={<HashtagGenerator />} />
 
                   {/* Creator Tools */}
                   <Route path="/creator-tools" element={<CreatorTools />} />
@@ -93,9 +99,11 @@ function App() {
                   <Route path="/background-remover" element={<BackgroundRemover />} />
                   <Route path="/transparent-png" element={<TransparentPngMaker />} />
                   <Route path="/watermark" element={<WatermarkTool />} />
+                  <Route path="/watermark-remover" element={<WatermarkRemover />} />
                   <Route path="/palette-from-image" element={<PaletteFromImage />} />
                   <Route path="/social-banner" element={<SocialBannerGenerator />} />
                   <Route path="/meme-maker" element={<MemeMaker />} />
+                  <Route path="/unmotivational-quotes" element={<UnmotivationalQuotes />} />
                   <Route path="/color-contrast-checker" element={<ColorContrastChecker />} />
                   <Route path="/favicon-generator" element={<FaviconGenerator />} />
                   <Route path="/svg-png" element={<SvgPngConverter />} />

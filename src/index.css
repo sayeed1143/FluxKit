@@ -3,7 +3,90 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-brand-background text-brand-foreground antialiased;
+  :root{
+    /* Ethan-Barrett (fallback) */
+    --eb1: #252626; --eb2: #0D0D0C; --eb3: #A6A6A6; --eb4: #F2F2F2; --eb5: #BFBFBF;
+
+    /* Zine #2 Rhythm palette (requested) */
+    --z1-hex: #142F40; /* rhythm-1 */
+    --z2-hex: #224459; /* rhythm-2 */
+    --z3-hex: #3B6D8C; /* rhythm-3 */
+    --z4-hex: #658DA6; /* rhythm-4 */
+    --z5-hex: #0D0D0D; /* rhythm-5 (black) */
+
+    --z1-rgba: rgba(19,46,63,1);
+    --z2-rgba: rgba(33,68,89,1);
+    --z3-rgba: rgba(58,109,140,1);
+    --z4-rgba: rgba(101,140,165,1);
+    --z5-rgba: rgba(12,12,12,1);
+
+    --z1-hsla: hsla(202,52%,16%,1);
+    --z2-hsla: hsla(202,44%,24%,1);
+    --z3-hsla: hsla(202,40%,39%,1);
+    --z4-hsla: hsla(202,26%,52%,1);
+    --z5-hsla: hsla(0,0%,5%,1);
+
+    /* Brand mapping (use zine palette) */
+    --brand-bg: var(--z5-hex);
+    --brand-foreground: var(--z4-hex);
+    --brand-card: var(--z1-hex);
+    --brand-border: var(--z3-hex);
+    --brand-accent: var(--z2-hex);
+    --brand-muted: var(--z4-hex);
+
+    /* Card text colour (light on dark cards) */
+    --brand-card-foreground: var(--z4-hex);
   }
+
+  body {
+    @apply antialiased;
+    background-color: var(--brand-bg) !important;
+    color: var(--brand-foreground) !important;
+  }
+
+  /* Branding utilities (hex) */
+  .zine-1-hex{ color: var(--z1-hex); }
+  .zine-2-hex{ color: var(--z2-hex); }
+  .zine-3-hex{ color: var(--z3-hex); }
+  .zine-4-hex{ color: var(--z4-hex); }
+  .zine-5-hex{ color: var(--z5-hex); }
+
+  /* RGBA utilities */
+  .zine-1-rgba{ color: var(--z1-rgba); }
+  .zine-2-rgba{ color: var(--z2-rgba); }
+  .zine-3-rgba{ color: var(--z3-rgba); }
+  .zine-4-rgba{ color: var(--z4-rgba); }
+  .zine-5-rgba{ color: var(--z5-rgba); }
+
+  /* HSLA utilities */
+  .zine-1-hsla{ color: var(--z1-hsla); }
+  .zine-2-hsla{ color: var(--z2-hsla); }
+  .zine-3-hsla{ color: var(--z3-hsla); }
+  .zine-4-hsla{ color: var(--z4-hsla); }
+  .zine-5-hsla{ color: var(--z5-hsla); }
+
+  /* Override theme classes to use zine palette for consistent look */
+  .bg-brand-background { background-color: var(--brand-bg) !important; }
+  .text-brand-foreground { color: var(--brand-foreground) !important; }
+  .bg-brand-card { background-color: var(--brand-card) !important; }
+  .border-brand-border { border-color: var(--brand-border) !important; }
+  .text-brand-muted { color: var(--brand-muted) !important; }
+  .bg-accent { background-color: var(--brand-accent) !important; }
+  .text-accent-foreground { color: var(--brand-card-foreground) !important; }
+
+  /* Ensure card text is readable (all descendants) */
+  .bg-brand-card, .bg-brand-card * { color: var(--brand-card-foreground) !important; }
+
+  /* Highlight card borders and add subtle glow */
+  .bg-brand-card { box-shadow: 0 6px 24px rgba(12,12,12,0.45); border: 1px solid var(--brand-border) !important; }
+  .bg-brand-card:hover { transform: translateY(-6px); transition: transform 220ms ease; }
+
+  /* Buttons and links on dark background */
+  .btn-accent, .bg-accent, .text-accent { background-color: var(--brand-accent) !important; color: var(--brand-card-foreground) !important; }
+
+  /* Make interactive elements clearly visible */
+  a, button, input, textarea, select { color: var(--brand-foreground) !important; }
+
+  /* Small helpers */
+  .muted-on-dark { color: rgba(101,140,165,0.9) !important; }
 }

@@ -23,7 +23,9 @@ const PaletteFromImage: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-brand-foreground">
       <h1 className="text-3xl md:text-5xl font-bold mb-6">Palette from Image</h1>
       <input type="file" accept="image/*" onChange={e=>e.target.files&&onFile(e.target.files[0])} className="mb-4" />
-      <img ref={imgRef} src={src||''} alt="" onLoad={()=>{}} className="hidden" />
+      {src ? (
+        <img ref={imgRef} src={src} alt="" onLoad={()=>{}} className="hidden" />
+      ) : null}
       <canvas ref={canvasRef} className="hidden" />
       <div className="flex items-center gap-4 mb-4"><label>Colors: {count}</label><input type="range" min={3} max={16} value={count} onChange={e=>setCount(parseInt(e.target.value))} /></div>
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">

@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               </div>
               <span className="text-xl font-bold">FluxKit</span>
             </div>
-            <p className="text-brand-muted max-w-xs">
+            <p className="text-brand-foreground max-w-xs">
               A comprehensive suite of AI-powered tools to streamline your workflow.
             </p>
           </div>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {links.map(link => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-brand-muted hover:text-accent transition-colors" data-cursor-hover>
+                    <Link to={link.path} className="text-brand-foreground hover:text-accent transition-colors" data-cursor-hover>
                       {link.name}
                     </Link>
                   </li>

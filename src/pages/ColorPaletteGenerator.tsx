@@ -134,6 +134,19 @@ const ColorPaletteGenerator: React.FC = () => {
     );
   };
 
+  const [roleMap, setRoleMap] = useState<{[k:string]:number}>({ bg:0, card:1, text:2, accent:3, muted:4 });
+
+  // keep roleMap within palette bounds when palette changes
+  React.useEffect(()=>{
+    setRoleMap(prev=>{
+      const newMap: any = {};
+      ['bg','card','text','accent','muted'].forEach((r,i)=>{ newMap[r] = prev[r] && prev[r] < palette.length ? prev[r] : i; });
+      return newMap;
+    });
+  },[palette]);
+
+  const setRoleIndex = (role:string, idx:number)=> setRoleMap(prev=>({ ...prev, [role]: idx }));
+
   return (
     <div className="min-h-[calc(100vh-8rem)] py-12 text-brand-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,7 +157,7 @@ const ColorPaletteGenerator: React.FC = () => {
           <h1 className="text-4xl font-bold text-brand-foreground mb-4">
             Advanced Color Palette Generator
           </h1>
-          <p className="text-xl text-brand-muted max-w-2xl mx-auto">
+          <p className="text-xl text-brand-foreground max-w-2xl mx-auto">
             Create, explore, and export beautiful color schemes for your next project.
           </p>
         </motion.div>
@@ -173,7 +186,18 @@ const ColorPaletteGenerator: React.FC = () => {
               </motion.div>
             ))}
           </div>
-          
+
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-2">
+            {['bg','card','text','accent','muted'].map(role => (
+              <div key={role} className="p-2 bg-brand-card border border-brand-border rounded">
+                <label className="block text-xs text-brand-foreground mb-1">{role.toUpperCase()}</label>
+                <select value={roleMap[role]} onChange={e=>setRoleIndex(role, parseInt(e.target.value))} className="w-full p-2 rounded border">
+                  {palette.map((c, i)=>(<option key={i} value={i}>{c}</option>))}
+                </select>
+              </div>
+            ))}
+          </div>
+
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
              <div className="flex items-center gap-2">
                 <button onClick={() => imageInputRef.current?.click()} className="inline-flex items-center space-x-2 bg-brand-border/50 text-brand-foreground px-4 py-2 rounded-lg hover:bg-brand-border/70 transition-colors" data-cursor-hover>
@@ -193,7 +217,7 @@ const ColorPaletteGenerator: React.FC = () => {
           </div>
         </motion.div>
         
-        <PalettePreview palette={palette} />
+        <PalettePreview palette={[palette[roleMap.bg], palette[roleMap.card], palette[roleMap.text], palette[roleMap.accent], palette[roleMap.muted]]} />
       </div>
     </div>
   );

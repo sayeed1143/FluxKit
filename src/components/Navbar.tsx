@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   const NavLink: React.FC<{ to: string, children: React.ReactNode, isMobile?: boolean }> = ({ to, children, isMobile }) => (
     <Link 
       to={to} 
-      className="block px-3 py-2 rounded-md text-base font-medium text-brand-muted hover:text-brand-foreground hover:bg-brand-card/50 transition-colors"
+      className="block px-3 py-2 rounded-md text-base font-medium text-brand-foreground hover:text-accent hover:bg-brand-card/50 transition-colors"
       data-cursor-hover
       onClick={() => {
         if (isMobile) setIsOpen(false);
@@ -32,18 +32,27 @@ const Navbar: React.FC = () => {
   );
 
   const Dropdown: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
-    <div className="relative" onMouseEnter={() => setOpenDropdown(title)} onMouseLeave={() => setOpenDropdown(null)}>
-      <button className="flex items-center space-x-1 text-brand-muted hover:text-brand-foreground transition-colors" data-cursor-hover>
+    <div
+      className="relative"
+      onMouseEnter={() => setOpenDropdown(title)}
+      onMouseLeave={() => setOpenDropdown(null)}
+    >
+      <button
+        className="flex items-center space-x-1 text-brand-foreground hover:text-accent transition-colors"
+        data-cursor-hover
+      >
         <span>{title}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === title ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`w-4 h-4 transition-transform ${openDropdown === title ? 'rotate-180' : ''}`}
+        />
       </button>
       <AnimatePresence>
         {openDropdown === title && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute left-1/2 -translate-x-1/2 mt-2 w-max bg-brand-card rounded-md shadow-lg p-2 border border-brand-border/50"
+            exit={{ opacity: 0, y: 6 }}
+            className="absolute left-1/2 -translate-x-1/2 top-full w-max bg-brand-card rounded-md shadow-lg p-2 border border-brand-border/50"
           >
             {children}
           </motion.div>
@@ -84,6 +93,7 @@ const Navbar: React.FC = () => {
                     <NavLink to="/ai-meeting-assistant">AI Meeting Assistant</NavLink>
                     <NavLink to="/image-format-converter">Image Converter</NavLink>
                     <NavLink to="/word-counter">Word Counter</NavLink>
+                    <NavLink to="/hashtag-generator">Hashtag & Caption Generator</NavLink>
                   </div>
                   <div className="p-2 space-y-2">
                     <h3 className="font-semibold text-brand-foreground px-3 mb-1">Converters</h3>
@@ -119,7 +129,7 @@ const Navbar: React.FC = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center space-x-2 text-brand-muted hover:text-brand-foreground transition-colors"
+                  className="flex items-center space-x-2 text-brand-foreground hover:text-accent transition-colors"
                   data-cursor-hover
                 >
                   <User className="w-5 h-5" />
@@ -132,10 +142,10 @@ const Navbar: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute right-0 mt-2 w-48 bg-brand-card rounded-md shadow-lg py-1 border border-brand-border/50"
+                      className="absolute right-0 mt-2 w-48 bg-brand-card rounded-md shadow-lg py-1 border border-brand-border/50 text-brand-foreground"
                     >
-                      <Link to="/dashboard" className="block px-4 py-2 text-sm text-brand-muted hover:bg-brand-background/50" onClick={() => setShowUserMenu(false)} data-cursor-hover>Dashboard</Link>
-                      <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-sm text-brand-muted hover:bg-brand-background/50 flex items-center space-x-2" data-cursor-hover>
+                      <Link to="/dashboard" className="block px-4 py-2 text-sm text-brand-foreground hover:bg-brand-background/50" onClick={() => setShowUserMenu(false)} data-cursor-hover>Dashboard</Link>
+                      <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-sm text-brand-foreground hover:bg-brand-background/50 flex items-center space-x-2" data-cursor-hover>
                         <LogOut className="w-4 h-4" />
                         <span>Logout</span>
                       </button>
@@ -152,7 +162,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-brand-muted hover:text-brand-foreground" data-cursor-hover>
+            <button onClick={() => setIsOpen(!isOpen)} className="text-brand-foreground hover:text-accent" data-cursor-hover>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -177,7 +187,7 @@ const Navbar: React.FC = () => {
               {user ? (
                 <>
                   <NavLink to="/dashboard" isMobile>Dashboard</NavLink>
-                  <button onClick={() => { handleLogout(); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-brand-muted hover:text-brand-foreground hover:bg-brand-background/50">Logout</button>
+                  <button onClick={() => { handleLogout(); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-brand-foreground hover:text-accent hover:bg-brand-background/50">Logout</button>
                 </>
               ) : (
                 <Link to="/auth" className="block px-3 py-2 rounded-md text-base font-medium text-accent" onClick={() => setIsOpen(false)}>Sign In</Link>

@@ -11,7 +11,7 @@ const items = [
 const BusinessTools: React.FC = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-brand-foreground">
     <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Business Tools</h1>
-    <p className="text-brand-muted text-lg mb-8">Streamline your operations, from invoicing to strategic planning.</p>
+    <p className="text-brand-foreground text-lg mb-8">Streamline your operations, from invoicing to strategic planning.</p>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {items.sort((a,b)=>a.title.localeCompare(b.title)).map(i=> (
         <Link key={i.title} to={i.link} className="bg-brand-card border border-brand-border rounded-lg p-4 hover:border-accent transition-colors" data-cursor-hover>

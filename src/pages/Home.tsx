@@ -139,19 +139,19 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 text-brand-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-brand-foreground leading-tight">
               <span className="block">The Ultimate Toolkit for</span>
-              <span className="bg-gradient-to-r from-accent to-indigo-500 bg-clip-text text-transparent">Modern Business</span>
+              <span className="block text-accent">Creators & Modern Businesses</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-brand-muted max-w-3xl mx-auto">
-              A comprehensive suite of AI-powered tools for business, creation, compliance, and file conversion.
+            <p className="text-lg md:text-xl mb-10 text-brand-foreground max-w-3xl mx-auto">
+              AI-powered design and productivity tools to create, publish, and grow your brand — fast and beautifully.
             </p>
             <Link
               to="/auth"
-              className="inline-flex items-center space-x-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_0_20px_rgba(47,69,114,0.5)] hover:shadow-[0_0_30px_rgba(47,69,114,0.8)] animate-subtle-glow"
+              className="inline-flex items-center space-x-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_12px_30px_rgba(56,59,67,0.12)] hover:shadow-[0_18px_40px_rgba(56,59,67,0.18)] animate-subtle-glow"
               data-cursor-hover
             >
-              <span>Get Started for Free</span>
+              <span>Start Creating — It's Free</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
@@ -177,7 +177,7 @@ const Home: React.FC = () => {
                   <h3 className="text-xl font-semibold text-brand-foreground mb-4">
                     {tool.title}
                   </h3>
-                  <p className="text-brand-muted mb-6 flex-grow">
+                  <p className="text-brand-foreground mb-6 flex-grow">
                     {tool.description}
                   </p>
                   <Link
@@ -194,21 +194,55 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      <ToolListSection 
-        id="business-tools"
-        title="Business Tools"
-        description="Streamline your operations and drive growth."
-        tools={businessTools}
-        icon={BriefcaseBusiness}
-      />
-      
-      <ToolListSection 
-        id="creator-tools"
-        title="Creator Tools"
-        description="Unleash your creativity with our powerful suite of tools."
-        tools={creatorTools}
-        icon={Paintbrush}
-      />
+      {/* How it works */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-foreground mb-4">
+              How FluxKit Works
+            </h2>
+            <p className="text-xl text-brand-muted max-w-2xl mx-auto">
+              Pick a category, choose a tool, follow the guided steps, and export your result.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[{
+              title: 'Browse Categories',
+              desc: 'Business, Creator, Legal & Compliance, and Utilities.',
+              icon: BriefcaseBusiness
+            }, {
+              title: 'Choose a Tool',
+              desc: 'Each tool has a clean UI with helpful defaults.',
+              icon: Paintbrush
+            }, {
+              title: 'Use Guided Steps',
+              desc: 'Inputs, previews, and tips to get great results.',
+              icon: ShieldCheck
+            }, {
+              title: 'Export & Share',
+              desc: 'Download, copy, or keep working in other tools.',
+              icon: Shuffle
+            }].map((item, idx) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: idx * 0.06 }} viewport={{ once: true, amount: 0.4 }}>
+                <SpotlightCard>
+                  <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-accent-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-brand-foreground mb-2">{item.title}</h3>
+                  <p className="text-brand-muted">{item.desc}</p>
+                </SpotlightCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="py-20">
@@ -245,14 +279,6 @@ const Home: React.FC = () => {
           </CardSwap>
         </div>
       </section>
-
-      <ToolListSection 
-        id="utility-tools"
-        title="Utilities"
-        description="Powerful utilities to simplify your everyday tasks."
-        tools={utilityTools}
-        icon={Wrench}
-      />
 
       {/* CTA Section */}
       <section className="py-20">
