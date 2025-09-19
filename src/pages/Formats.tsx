@@ -70,7 +70,7 @@ const Formats: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-2">
                 {category.formats.map(format => (
-                  <span key={format} className="px-3 py-1 bg-brand-background text-brand-muted rounded-full text-sm font-medium">
+                  <span key={format} className="px-3 py-1 bg-brand-background text-brand-foreground rounded-full text-sm font-medium">
                     {format}
                   </span>
                 ))}
