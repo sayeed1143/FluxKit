@@ -134,6 +134,19 @@ const ColorPaletteGenerator: React.FC = () => {
     );
   };
 
+  const [roleMap, setRoleMap] = useState<{[k:string]:number}>({ bg:0, card:1, text:2, accent:3, muted:4 });
+
+  // keep roleMap within palette bounds when palette changes
+  React.useEffect(()=>{
+    setRoleMap(prev=>{
+      const newMap: any = {};
+      ['bg','card','text','accent','muted'].forEach((r,i)=>{ newMap[r] = prev[r] && prev[r] < palette.length ? prev[r] : i; });
+      return newMap;
+    });
+  },[palette]);
+
+  const setRoleIndex = (role:string, idx:number)=> setRoleMap(prev=>({ ...prev, [role]: idx }));
+
   return (
     <div className="min-h-[calc(100vh-8rem)] py-12 text-brand-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
