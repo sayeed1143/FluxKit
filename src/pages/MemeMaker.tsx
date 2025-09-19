@@ -33,6 +33,15 @@ const MemeMaker: React.FC = () => {
           <input value={bottom} onChange={e=>setBottom(e.target.value)} className="w-full p-2 rounded border" />
           <label>Font size: {size}px</label>
           <input type="range" min={16} max={128} value={size} onChange={e=>setSize(parseInt(e.target.value))} />
+          <div className="flex gap-2 items-center">
+            <label>Text</label>
+            <input type="color" value={color} onChange={e=>setColor(e.target.value)} />
+            <label>Stroke</label>
+            <input type="color" value={strokeColor} onChange={e=>setStrokeColor(e.target.value)} />
+            <select value={font} onChange={e=>setFont(e.target.value)} className="p-2 rounded border">
+              {fonts.map(f=> <option key={f} value={f}>{f.split(',')[0]}</option>)}
+            </select>
+          </div>
           <button onClick={download} className="bg-accent text-accent-foreground px-4 py-2 rounded">Download PNG</button>
         </div>
         <div>
