@@ -217,7 +217,7 @@ const ColorPaletteGenerator: React.FC = () => {
           </div>
         </motion.div>
         
-        <PalettePreview palette={palette} />
+        <PalettePreview palette={[palette[roleMap.bg], palette[roleMap.card], palette[roleMap.text], palette[roleMap.accent], palette[roleMap.muted]]} />
       </div>
     </div>
   );
