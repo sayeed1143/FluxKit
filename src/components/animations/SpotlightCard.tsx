@@ -25,24 +25,40 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className }) =>
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.01 }}
+      whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.35 }}
       className={`group relative w-full overflow-hidden rounded-xl bg-brand-card border border-brand-border/50 p-8 shadow-lg ${className}`}
       onMouseMove={handleMouseMove}
       data-cursor-hover
     >
+      {/* Spotlight radial */}
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(
               350px circle at ${mouseX}px ${mouseY}px,
-              rgba(37, 38, 38, 0.18),
+              rgba(56,59,67,0.08),
               transparent 80%
             )
           `,
         }}
       />
+
+      {/* Shine overlay */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 rounded-xl"
+        initial={{ x: '-120%' }}
+        whileHover={{ x: '120%' }}
+        transition={{ duration: 0.9, ease: 'easeInOut' }}
+        style={{
+          background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%)',
+          transform: 'skewX(-15deg)',
+          mixBlendMode: 'overlay',
+          opacity: 0.6,
+        }}
+      />
+
       <div className="relative z-10">{children}</div>
     </motion.div>
   );
