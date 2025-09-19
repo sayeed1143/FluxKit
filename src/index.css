@@ -3,7 +3,64 @@
 @tailwind utilities;
 
 @layer base {
+  :root{
+    /* Color Theme Swatches in Hex */
+    --eb1: #252626;
+    --eb2: #0D0D0C;
+    --eb3: #A6A6A6;
+    --eb4: #F2F2F2;
+    --eb5: #BFBFBF;
+
+    /* RGBA */
+    --eb1-rgba: rgba(36,37,38,1);
+    --eb2-rgba: rgba(12,12,11,1);
+    --eb3-rgba: rgba(165,165,165,1);
+    --eb4-rgba: rgba(242,242,242,1);
+    --eb5-rgba: rgba(191,191,191,1);
+
+    /* HSLA */
+    --eb1-hsla: hsla(208,2%,14%,1);
+    --eb2-hsla: hsla(56,4%,4%,1);
+    --eb3-hsla: hsla(0,0%,65%,1);
+    --eb4-hsla: hsla(0,0%,95%,1);
+    --eb5-hsla: hsla(0,0%,75%,1);
+
+    /* Card text color for dark cards */
+    --brand-card-foreground: var(--eb4);
+  }
+
   body {
     @apply bg-brand-background text-brand-foreground antialiased;
+  }
+
+  /* Branding utility classes (hex) */
+  .Ethan-Barrett-branding-1-hex{ color: var(--eb1); }
+  .Ethan-Barrett-branding-2-hex{ color: var(--eb2); }
+  .Ethan-Barrett-branding-3-hex{ color: var(--eb3); }
+  .Ethan-Barrett-branding-4-hex{ color: var(--eb4); }
+  .Ethan-Barrett-branding-5-hex{ color: var(--eb5); }
+
+  /* Branding utility classes (rgba) */
+  .Ethan-Barrett-branding-1-rgba{ color: var(--eb1-rgba); }
+  .Ethan-Barrett-branding-2-rgba{ color: var(--eb2-rgba); }
+  .Ethan-Barrett-branding-3-rgba{ color: var(--eb3-rgba); }
+  .Ethan-Barrett-branding-4-rgba{ color: var(--eb4-rgba); }
+  .Ethan-Barrett-branding-5-rgba{ color: var(--eb5-rgba); }
+
+  /* Branding utility classes (hsla) */
+  .Ethan-Barrett-branding-1-hsla{ color: var(--eb1-hsla); }
+  .Ethan-Barrett-branding-2-hsla{ color: var(--eb2-hsla); }
+  .Ethan-Barrett-branding-3-hsla{ color: var(--eb3-hsla); }
+  .Ethan-Barrett-branding-4-hsla{ color: var(--eb4-hsla); }
+  .Ethan-Barrett-branding-5-hsla{ color: var(--eb5-hsla); }
+
+  /* Ensure text inside brand cards is readable (light) */
+  .bg-brand-card, .brand-card {
+    color: var(--brand-card-foreground) !important;
+  }
+
+  /* Make interactive elements more visible on dark cards */
+  .bg-brand-card a, .bg-brand-card button, .bg-brand-card input, .bg-brand-card textarea{
+    color: var(--brand-card-foreground) !important;
   }
 }
