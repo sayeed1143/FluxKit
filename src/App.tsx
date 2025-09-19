@@ -57,6 +57,8 @@ import SocialBannerGenerator from './pages/SocialBannerGenerator';
 import MemeMaker from './pages/MemeMaker';
 import ColorContrastChecker from './pages/ColorContrastChecker';
 import FaviconGenerator from './pages/FaviconGenerator';
+import WatermarkRemover from './pages/WatermarkRemover';
+import UnmotivationalQuotes from './pages/UnmotivationalQuotes';
 import SvgPngConverter from './pages/SvgPngConverter';
 import SvgOptimizer from './pages/SvgOptimizer';
 import IconSpriteBuilder from './pages/IconSpriteBuilder';
