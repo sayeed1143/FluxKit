@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const Card: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="bg-brand-card border border-brand-border/50 rounded-xl shadow-lg p-8 w-full">
+    <div className="bg-brand-card border border-brand-border/50 rounded-xl shadow-lg p-8 w-full motion-safe:animate-card-float">
       {children}
     </div>
   );
