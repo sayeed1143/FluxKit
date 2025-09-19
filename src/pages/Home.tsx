@@ -143,7 +143,7 @@ const Home: React.FC = () => {
               <span className="block">The Ultimate Toolkit for</span>
               <span className="block text-accent">Creators & Modern Businesses</span>
             </h1>
-            <p className="text-lg md:text-xl mb-10 text-brand-muted max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-10 text-brand-foreground max-w-3xl mx-auto">
               AI-powered design and productivity tools to create, publish, and grow your brand — fast and beautifully.
             </p>
             <Link
