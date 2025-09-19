@@ -71,6 +71,7 @@ function App() {
         <div className="min-h-screen bg-brand-background">
           <div className="relative z-10">
             <Navbar />
+            <Breadcrumbs />
             <main>
               <AnimatePresence mode="wait">
                 <Routes>
