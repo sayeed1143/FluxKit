@@ -62,15 +62,17 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <nav className="sticky top-0 z-50 bg-brand-background/80 backdrop-blur-lg border-b border-brand-border/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl border-b border-replit-orange/20 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-replit-orange/5 via-transparent to-replit-orange/5 animate-gradient-shift"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2" data-cursor-hover>
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">FK</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-replit-orange to-orange-600 rounded-lg flex items-center justify-center animate-replit-glow relative overflow-hidden">
+                <div className="absolute inset-0 animate-shine-border opacity-20"></div>
+                <span className="text-white font-bold text-lg relative z-10">FK</span>
               </div>
-              <span className="text-xl font-bold text-brand-foreground">FluxKit</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-replit-orange to-orange-600 bg-clip-text text-transparent">FluxKit</span>
             </Link>
           </div>
 
@@ -154,8 +156,9 @@ const Navbar: React.FC = () => {
                 </AnimatePresence>
               </div>
             ) : (
-              <Link to="/auth" className="bg-accent text-accent-foreground px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors shadow-[0_0_15px_rgba(47,69,114,0.5)] animate-subtle-glow" data-cursor-hover>
-                Sign In
+              <Link to="/auth" className="bg-gradient-to-r from-replit-orange to-orange-600 text-white px-4 py-2 rounded-lg hover:from-orange-600 hover:to-replit-orange transition-all duration-300 animate-replit-glow relative overflow-hidden group" data-cursor-hover>
+                <div className="absolute inset-0 animate-shine-border opacity-30 group-hover:opacity-50"></div>
+                <span className="relative z-10">Sign In</span>
               </Link>
             )}
           </div>

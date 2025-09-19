@@ -126,11 +126,12 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-brand-background"></div>
-          <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_center,rgba(47,70,115,0.6)_0%,transparent_45%)]"></div>
+          <div className="absolute inset-0 bg-background"></div>
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,133,0,0.4)_0%,transparent_50%)]"></div>
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -inset-40 bg-[conic-gradient(from_180deg_at_50%_50%,#2F4673_0%,#7c8aa8_25%,#2F4673_50%,#7c8aa8_75%,#2F4673_100%)] opacity-10 blur-3xl" />
+            <div className="absolute -inset-40 bg-[conic-gradient(from_180deg_at_50%_50%,#FF8500_0%,#FF6B00_25%,#FF8500_50%,#FFA500_75%,#FF8500_100%)] opacity-10 blur-3xl animate-gradient-shift" />
           </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-replit-orange/5 via-transparent to-replit-orange/10 animate-pulse-orange"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -139,20 +140,21 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-brand-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground leading-tight">
               <span className="block">The Ultimate Toolkit for</span>
-              <span className="block text-accent">Creators & Modern Businesses</span>
+              <span className="block bg-gradient-to-r from-replit-orange via-orange-500 to-yellow-500 bg-clip-text text-transparent animate-gradient-shift">Creators & Modern Businesses</span>
             </h1>
-            <p className="text-lg md:text-xl mb-10 text-brand-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-10 text-muted max-w-3xl mx-auto">
               AI-powered design and productivity tools to create, publish, and grow your brand — fast and beautifully.
             </p>
             <Link
               to="/auth"
-              className="inline-flex items-center space-x-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_12px_30px_rgba(56,59,67,0.12)] hover:shadow-[0_18px_40px_rgba(56,59,67,0.18)] animate-subtle-glow"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-replit-orange to-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-orange-600 hover:to-replit-orange transition-all duration-300 animate-replit-glow relative overflow-hidden group"
               data-cursor-hover
             >
-              <span>Start Creating — It's Free</span>
-              <ArrowRight className="w-5 h-5" />
+              <div className="absolute inset-0 animate-shine-border opacity-30 group-hover:opacity-50"></div>
+              <span className="relative z-10">Start Creating — It's Free</span>
+              <ArrowRight className="w-5 h-5 relative z-10" />
             </Link>
           </motion.div>
         </div>
